@@ -15,11 +15,10 @@ public class ID3DecisionTree {
 		
 		String inputFile = args[0];
 		
-		structure.DataMatrix.dataIntake(inputFile);
+		String[] inputData = structure.DataMatrix.dataIntake(inputFile);
 		
-		structure.DataMatrix.InitializeMatrix();
+		structure.DataMatrix.InitializeMatrix(inputData);
 		
 	}
-
 	
 }

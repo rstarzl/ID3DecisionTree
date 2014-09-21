@@ -1,7 +1,6 @@
 package structure;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,39 +16,45 @@ public class DataMatrix {
 		setDim1(0);
 		setDim2(0);
 		
-        FileReader fileReader;
+        FileReader fileReader = null;
 		try {
 			fileReader = new FileReader(filename);
-	        BufferedReader bufferedReader = new BufferedReader(fileReader);
-	        List<String> lines = new ArrayList<String>();
-	        String line = null;
-	        while ((line = bufferedReader.readLine()) != null) {
-	            lines.add(line);
-	            setDim1(getDim1()+1);
-	        }
-
-			setDim2(lines.get(0).split(",").length);
-
-	        
-	        bufferedReader.close();
-	        return lines.toArray(new String[lines.size()]);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			return null;
 		} catch (IOException e) {
 			e.printStackTrace();
-			return null;
 		}
-		
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        List<String> lines = new ArrayList<String>();
+        String line = null;
+        try { //Calculate the first dimension of the data matrix
+			while ((line = bufferedReader.readLine()) != null) {
+			    lines.add(line);
+			    setDim1(getDim1()+1);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
+        //Calculate the second dimension of the data matrix
+		setDim2(lines.get(0).split(",").length);
+        
+        try {
+			bufferedReader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        
+        return lines.toArray(new String[lines.size()]);
     }
 	
-	public static void InitializeMatrix() {
+	public static void InitializeMatrix(String[] inputData) {
 		matrix = new double[getDim1()][getDim2()];
-	}
-	
-	public void PopulateMatrix(String[] inputData) {
 		
+		for(int d1 = 0; d1 < inputData.length; d1++) {
+			String[] tokens = inputData[d1].split(",");
+			for(int d2 = 0; d2 < tokens.length; d2++) {
+				matrix[d1][d2] = Double.parseDouble(tokens[d2]);
+			}
+		}
 	}
 	
 	
