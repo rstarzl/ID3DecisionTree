@@ -1,4 +1,4 @@
-package Grow;
+package structure;
 
 public class ID3DecisionTree {
 
