@@ -8,10 +8,10 @@ import java.util.List;
 
 public class DataMatrix {
 
-	private static double[][] matrix;
-	private static double[] labels;
-	private static int dim1;
-	private static int dim2;
+	private static Double[][] matrix;
+	private static Double[] labels;
+	private static Integer dim1;
+	private static Integer dim2;
 	
 	public static String[] dataIntake(String filename) {
 		setDim1(0);
@@ -49,8 +49,8 @@ public class DataMatrix {
 	
 	public static void InitializeMatrix(String[] inputData) {
 		//Presume last column of matrix is the label, so we capture it in its own array
-		matrix = new double[getDim1()][getDim2()-1];
-		labels = new double[getDim1()];
+		matrix = new Double[getDim1()][getDim2()-1];
+		labels = new Double[getDim1()];
 		
 		for(int d1 = 0; d1 < inputData.length; d1++) {
 			String[] tokens = inputData[d1].split(",");
@@ -67,7 +67,7 @@ public class DataMatrix {
 		return dim1;
 	}
 
-	public static void setDim1(int dim1) {
+	public static void setDim1(Integer dim1) {
 		DataMatrix.dim1 = dim1;
 	}
 
@@ -75,8 +75,19 @@ public class DataMatrix {
 		return dim2;
 	}
 
-	public static void setDim2(int dim2) {
+	public static void setDim2(Integer dim2) {
 		DataMatrix.dim2 = dim2;
 	}
 	
+	public static Double[][] getMatrix() {
+		return matrix;
+	}
+	
+	public static Double getData(Integer d1, Integer d2) {
+		return matrix[d1][d2];
+	}
+	
+	public static void setDataInstance(Integer d1, Integer d2, Double newValue) {
+		matrix[d1][d2] = newValue;
+	}
 }

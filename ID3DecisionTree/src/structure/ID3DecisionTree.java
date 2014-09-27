@@ -19,6 +19,8 @@ public class ID3DecisionTree {
 		
 		structure.DataMatrix.InitializeMatrix(inputData);
 		
+		structure.DataMatrix.getMatrix();
+		
 	}
 
 }
