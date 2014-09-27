@@ -9,6 +9,7 @@ import java.util.List;
 public class DataMatrix {
 
 	private static double[][] matrix;
+	private static double[] labels;
 	private static int dim1;
 	private static int dim2;
 	
@@ -47,13 +48,16 @@ public class DataMatrix {
     }
 	
 	public static void InitializeMatrix(String[] inputData) {
-		matrix = new double[getDim1()][getDim2()];
+		//Presume last column of matrix is the label, so we capture it in its own array
+		matrix = new double[getDim1()][getDim2()-1];
+		labels = new double[getDim1()];
 		
 		for(int d1 = 0; d1 < inputData.length; d1++) {
 			String[] tokens = inputData[d1].split(",");
-			for(int d2 = 0; d2 < tokens.length; d2++) {
+			for(int d2 = 0; d2 < tokens.length-1; d2++) {
 				matrix[d1][d2] = Double.parseDouble(tokens[d2]);
 			}
+			labels[d1] = Double.parseDouble(tokens[tokens.length-1]);
 		}
 	}
 	
