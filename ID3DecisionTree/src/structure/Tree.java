@@ -43,12 +43,17 @@ public class Tree {
 	public void addNode(Integer nID, Node n) {
 		Nodes.put(nID,n);
 	}
+	public void removeNode(Integer nID) {
+		Nodes.remove(nID);
+	}
 	public static HashMap<Integer,Leaf> getLeaves() {
 		return Leaves;
 	}
 	public void addLeaf(Integer nID, Leaf l) {
 		Leaves.put(nID,l);
 	}
-	
+	public void removeLeaf(Integer nID) {
+		Leaves.remove(nID);
+	}
 	
 }
