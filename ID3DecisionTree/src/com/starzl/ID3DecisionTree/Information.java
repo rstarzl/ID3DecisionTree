@@ -1,6 +1,5 @@
-package grow;
+package com.starzl.ID3DecisionTree;
 
-import structure.Leaf;
 
 public class Information {
 

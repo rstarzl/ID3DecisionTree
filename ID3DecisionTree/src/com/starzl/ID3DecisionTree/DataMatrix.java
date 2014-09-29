@@ -1,4 +1,4 @@
-package structure;
+package com.starzl.ID3DecisionTree;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

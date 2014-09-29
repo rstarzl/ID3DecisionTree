@@ -1,4 +1,4 @@
-package prune;
+package com.starzl.ID3DecisionTree;
 
 public class Prune {
 

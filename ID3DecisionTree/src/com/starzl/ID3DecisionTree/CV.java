@@ -1,4 +1,4 @@
-package validation;
+package com.starzl.ID3DecisionTree;
 
 public class CV {
 

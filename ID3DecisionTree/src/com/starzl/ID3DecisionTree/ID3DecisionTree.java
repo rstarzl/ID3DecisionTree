@@ -1,4 +1,4 @@
-package structure;
+package com.starzl.ID3DecisionTree;
 
 public class ID3DecisionTree {
 
@@ -15,11 +15,11 @@ public class ID3DecisionTree {
 		
 		String inputFile = args[0];
 		
-		String[] inputData = structure.DataMatrix.dataIntake(inputFile);
+		String[] inputData = com.starzl.ID3DecisionTree.DataMatrix.dataIntake(inputFile);
 		
-		structure.DataMatrix.InitializeMatrix(inputData);
+		com.starzl.ID3DecisionTree.DataMatrix.InitializeMatrix(inputData);
 		
-		structure.DataMatrix.getMatrix();
+		com.starzl.ID3DecisionTree.DataMatrix.getMatrix();
 		
 	}
 

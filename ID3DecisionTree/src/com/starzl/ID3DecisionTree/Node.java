@@ -1,4 +1,4 @@
-package structure;
+package com.starzl.ID3DecisionTree;
 
 public class Node {
 
