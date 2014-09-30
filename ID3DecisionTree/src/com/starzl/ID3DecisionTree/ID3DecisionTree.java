@@ -27,11 +27,18 @@ public class ID3DecisionTree {
 		Tree dt = new Tree();
 		
 		//Create the root node
-		Node root = new Node(dt);
+		Leaf l = new Leaf(dt,0,DataMatrix.getMatrixIndices());
 		
-		dt.addNode(root.getNodeID(),root);
+		//Add the root to the tree
+		dt.addLeaf(l.getNodeID(),l);
+	
 		
-		System.out.println(dt.getNumberOfNodes());
+		//Determine which feature to split the root node on
+		Information.EvaluateLeaf(l);
+		
+		System.out.println(l.getInstanceIndices());
+		
+		
 		
 	}
 

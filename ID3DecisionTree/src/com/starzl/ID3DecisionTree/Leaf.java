@@ -6,8 +6,18 @@ public class Leaf {
 	private ArrayList<Integer> instanceIndices = new ArrayList<Integer>();
 	private Integer parent;
 	private Integer leafClass;
-	private Boolean growing = true;
+	private Boolean growing;
+	private Integer nodeID;
 
+	
+	public Leaf(Tree tree,Integer parent,ArrayList<Integer> instanceIndices) {
+		setNodeID(tree.getNewNodeID());
+		this.parent = parent;
+		this.instanceIndices = instanceIndices;
+		setGrowing(true);
+	}
+	
+	
 	public ArrayList<Integer> getInstanceIndices() {
 		return instanceIndices;
 	}
@@ -46,6 +56,14 @@ public class Leaf {
 
 	public void setGrowing(Boolean growing) {
 		this.growing = growing;
+	}
+
+	public Integer getNodeID() {
+		return nodeID;
+	}
+
+	public void setNodeID(Integer nodeID) {
+		this.nodeID = nodeID;
 	}
 	
 }

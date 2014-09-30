@@ -2,6 +2,7 @@ package com.starzl.ID3DecisionTree;
 
 public class Node {
 
+	private Integer splitFeature;
 	private Double threshold;
 	private Integer child0;
 	private Integer child1;
@@ -44,6 +45,12 @@ public class Node {
 	}
 	public void setNodeID(Integer nodeID) {
 		this.nodeID = nodeID;
+	}
+	public Integer getSplitFeature() {
+		return splitFeature;
+	}
+	public void setSplitFeature(Integer splitFeature) {
+		this.splitFeature = splitFeature;
 	}
 	
 }

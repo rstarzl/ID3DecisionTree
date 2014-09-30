@@ -90,4 +90,11 @@ public class DataMatrix {
 	public static void setDataInstance(Integer d1, Integer d2, Double newValue) {
 		matrix[d1][d2] = newValue;
 	}
+	
+	public static ArrayList<Integer> getMatrixIndices() {
+		ArrayList<Integer> indices = new ArrayList<Integer>();
+		for(int i=0;i<getDim1();i++)
+			indices.add(i);
+		return indices;
+	}
 }
