@@ -8,8 +8,8 @@ public class Tree {
 	private Integer numberOfLeaves;
 	private Integer nodeID = 0;
 	
-	private static HashMap<Integer,Node> Nodes = new HashMap<Integer,Node>();
-	private static HashMap<Integer,Leaf> Leaves = new HashMap<Integer,Leaf>();
+	private static HashMap<Integer,Node> nodes = new HashMap<Integer,Node>();
+	private static HashMap<Integer,Leaf> leaves = new HashMap<Integer,Leaf>();
 	
 	public Integer getNumberOfNodes() {
 		return numberOfNodes;
@@ -39,22 +39,26 @@ public class Tree {
 
 	
 	public HashMap<Integer,Node> getNodes() {
-		return Nodes;
+		return nodes;
 	}
 	public void addNode(Integer nID, Node n) {
-		Nodes.put(nID,n);
+		nodes.put(nID,n);
+		setNumberOfNodes(nodes.size());
 	}
 	public void removeNode(Integer nID) {
-		Nodes.remove(nID);
+		nodes.remove(nID);
+		setNumberOfNodes(nodes.size());
 	}
 	public static HashMap<Integer,Leaf> getLeaves() {
-		return Leaves;
+		return leaves;
 	}
 	public void addLeaf(Integer nID, Leaf l) {
-		Leaves.put(nID,l);
+		leaves.put(nID,l);
+		setNumberOfLeaves(leaves.size());
 	}
 	public void removeLeaf(Integer nID) {
-		Leaves.remove(nID);
+		leaves.remove(nID);
+		setNumberOfLeaves(leaves.size());
 	}
 	
 }
