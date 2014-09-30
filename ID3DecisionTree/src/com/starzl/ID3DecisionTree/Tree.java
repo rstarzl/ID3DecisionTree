@@ -43,18 +43,22 @@ public class Tree {
 	}
 	public void addNode(Integer nID, Node n) {
 		Nodes.put(nID,n);
+		setNumberOfNodes(Nodes.size());
 	}
 	public void removeNode(Integer nID) {
 		Nodes.remove(nID);
+		setNumberOfNodes(Nodes.size());
 	}
 	public static HashMap<Integer,Leaf> getLeaves() {
 		return Leaves;
 	}
 	public void addLeaf(Integer nID, Leaf l) {
 		Leaves.put(nID,l);
+		setNumberOfLeaves(Leaves.size());
 	}
 	public void removeLeaf(Integer nID) {
 		Leaves.remove(nID);
+		setNumberOfLeaves(Leaves.size());
 	}
 	
 }
