@@ -29,9 +29,6 @@ public class ID3DecisionTree {
 		//Create the root node
 		Node root = new Node(dt);
 		
-		dt.addNode(root.getNodeID(),root);
-		
-		System.out.println(dt.getNumberOfNodes());
 		
 		
 	}
