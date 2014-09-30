@@ -6,6 +6,14 @@ public class Node {
 	private Integer child0;
 	private Integer child1;
 	private Integer parent;
+	private Integer nodeID;
+	
+	public Node(Tree tree) {
+		setNodeID(tree.getNewNodeID());
+	}
+	public Node(Integer nodeID) {
+		setNodeID(nodeID);
+	}
 	
 	public Double getThreshold() {
 		return threshold;
@@ -30,6 +38,12 @@ public class Node {
 	}
 	public void setParent(Integer parent) {
 		this.parent = parent;
+	}
+	public Integer getNodeID() {
+		return nodeID;
+	}
+	public void setNodeID(Integer nodeID) {
+		this.nodeID = nodeID;
 	}
 	
 }

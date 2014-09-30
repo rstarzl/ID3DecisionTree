@@ -29,8 +29,9 @@ public class Tree {
 		return nodeID;
 	}
 	public Integer getNewNodeID() {
+		Integer currentNodeID = getCurrentNodeID();
 		setNodeID(getCurrentNodeID()+1);
-		return nodeID;
+		return currentNodeID;
 	}
 	public void setNodeID(Integer nodeID) {
 		this.nodeID = nodeID;
