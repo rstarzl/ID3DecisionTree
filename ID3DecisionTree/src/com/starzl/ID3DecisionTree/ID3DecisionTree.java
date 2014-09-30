@@ -15,11 +15,21 @@ public class ID3DecisionTree {
 		
 		String inputFile = args[0];
 		
-		String[] inputData = com.starzl.ID3DecisionTree.DataMatrix.dataIntake(inputFile);
 		
+		//Load the data into an array of strings
+		String[] inputData = com.starzl.ID3DecisionTree.DataMatrix.dataIntake(inputFile);
+
+		//Populate the data matrix with the input data
 		com.starzl.ID3DecisionTree.DataMatrix.InitializeMatrix(inputData);
 		
-		com.starzl.ID3DecisionTree.DataMatrix.getMatrix();
+		
+		//Create a new decision tree
+		Tree dt = new Tree();
+		
+		//Create the root node
+		Node root = new Node(dt);
+		
+		
 		
 	}
 
